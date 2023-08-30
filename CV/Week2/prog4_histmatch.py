@@ -10,7 +10,7 @@ multi = True if src.shape[-1] > 1 else False
 matched = exposure.match_histograms(src, ref, multichannel=multi)
 grayimgsrc = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)
 grayimgref = cv2.cvtColor(ref, cv2.COLOR_BGR2GRAY)
-grayimgmat = cv2.cvtColor(ref, cv2.COLOR_BGR2GRAY)
+grayimgmat = cv2.cvtColor(matched, cv2.COLOR_BGR2GRAY)
 plt.hist(grayimgsrc.flatten(),256,[0,256], color = 'r')
 plt.xlim([0,256])
 plt.hist(grayimgref.flatten(),256,[0,256], color = 'g')
