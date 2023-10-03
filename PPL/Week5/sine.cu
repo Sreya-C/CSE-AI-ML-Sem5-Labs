@@ -27,9 +27,8 @@ int main()
 
   findsin<<<1, N>>>(d_a,d_output);
   cudaMemcpy(output, d_output, N * sizeof(float), cudaMemcpyDeviceToHost);
-  printf("Using N blocks\n");
   for (int i = 0; i < N; i++) {
-    printf("%f\n", output[i]);
+    printf("sin(%f) = %f\n", h_a[i], output[i]);
   }
 
 }
